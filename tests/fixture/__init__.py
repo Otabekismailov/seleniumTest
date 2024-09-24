@@ -1,0 +1,12 @@
+from .chekin import *  # noqa
+from .classes import *  # noqa
+from .dashboard import *  # noqa
+from .gym import *  # noqa
+from .login import *  # noqa
+from .members import *  # noqa
+from .payments import *  # noqa
+from .pkg import *  # noqa
+from .room import *  # noqa
+from .schedule import *  # noqa
+from .settings import *  # noqa
+from .staff import *  # noqa
