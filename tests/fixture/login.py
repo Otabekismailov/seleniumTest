@@ -8,17 +8,17 @@ from selenium.webdriver.common.by import By
 def change_language(setup_url):
     data = {
         "left_title_h3": setup_url.find_element(By.XPATH,
-                                                '//h3[@class="MuiTypography-root MuiTypography-h3 css-gno8xn"]'),
+                                                "//h3[@class='MuiTypography-root MuiTypography-h3 css-gno8xn']"),
         "left_desc_p": setup_url.find_element(By.XPATH,
-                                              '//p[@class="MuiTypography-root MuiTypography-bodyXl css-a3g2vt"]'),
+                                              "//p[@class='MuiTypography-root MuiTypography-bodyXl css-1ri9ko4']"),
         "right_title_h3": setup_url.find_element(By.XPATH,
-                                                 '//h3[@class="MuiTypography-root MuiTypography-h3 css-xl8q5"]'),
+                                                 "//h3[@class='MuiTypography-root MuiTypography-h3 css-xl8q5']"),
         "right_desc_p": setup_url.find_element(By.XPATH,
-                                               '//p[@class="MuiTypography-root MuiTypography-bodyMd css-rdcnql"]'),
+                                               "//p[@class='MuiTypography-root MuiTypography-bodyMd css-rdcnql']"),
         "email_title": setup_url.find_element(By.XPATH,
-                                              '//label[@for="email-input"]'),
+                                              "//label[@for='email-input']"),
         "email_input_text": setup_url.find_element(By.ID, 'email-input'),
-        "password_title": setup_url.find_element(By.XPATH, '//label[@for="password-input"]'),
+        "password_title": setup_url.find_element(By.XPATH, "//label[@for='password-input']"),
         "password_input_text": setup_url.find_element(By.ID, 'password-input'),
         "support_text": setup_url.find_element(By.XPATH,
                                                "//p[@class='MuiTypography-root MuiTypography-body1 css-7bioyt']"),
@@ -40,5 +40,5 @@ def select_lang(setup_url):
 
 @pytest.fixture
 def get_all_languages(select_lang):
-    lang_elements = select_lang.find_elements(By.XPATH, '//li[@role="menuitem"]')
+    lang_elements = select_lang.find_elements(By.XPATH, "//li[@role='menuitem']")
     return lang_elements

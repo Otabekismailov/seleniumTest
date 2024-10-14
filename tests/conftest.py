@@ -2,6 +2,7 @@ import os
 
 import dotenv
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service as ChromeService
 
 from .fixture import *  # noqa
@@ -10,11 +11,12 @@ from .fixture import *  # noqa
 @pytest.fixture(scope="session")
 def browser():
     # Adjust path to your ChromeDriver executable
+    options = Options()
+    options.add_argument('--headless')
     server = ChromeService(executable_path='/Users/credo_market/PycharmProjects/seleniumDeepenTest/chromedriver')
-    driver = webdriver.Chrome(service=server)
+    driver = webdriver.Chrome(service=server, options=options)
     driver.maximize_window()
-    yield driver
-    driver.quit()
+    return driver
 
 
 @pytest.fixture

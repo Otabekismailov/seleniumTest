@@ -1,12 +1,11 @@
 import time
 from datetime import datetime
-
 import pytest
 from selenium.common import NoSuchElementException
 from selenium.webdriver import Keys
 from selenium.webdriver.common.by import By
-
 from .services import HomePagePathName
+
 
 moth_uz = {
     1: "Yanvar",
@@ -422,6 +421,7 @@ class TestGymEn(ServiceTestGym):
         password_input.send_keys(password)
         button_click = change_language["button_enter"]
         setup_url.execute_script("arguments[0].click();", button_click)
+        setup_url.get_cookies()
         time.sleep(2)
         return self.setup(setup_url)
 

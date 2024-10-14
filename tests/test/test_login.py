@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 
 class TestLogin:
 
-    def test_lang_change_uz(self, get_all_languages, change_language, fake_email_password, setup_url):
+    def test_lang_change_uz(self,change_language, get_all_languages, fake_email_password, setup_url):
         # lang_elements = select_lang.find_elements(By.XPATH, '//li[@role="menuitem"]')
         if get_all_languages[0].text == "O’zbekcha":
             get_all_languages[0].click()
@@ -56,7 +56,7 @@ class TestLogin:
         assert change_language[
                    "support_description"].get_attribute("innerText") == (
                    "If you are unable to login please contact our support team at +9989037371177")
-        assert change_language['button_enter'].text == 'Login'
+        assert change_language['button_enter'].text == 'LOGIN'
 
         email, password = fake_email_password
         email_input = change_language["email_input_text"]
