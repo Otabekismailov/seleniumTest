@@ -14,7 +14,7 @@ def browser():
     options = Options()
     options.add_argument('--headless')
     server = ChromeService(executable_path='/Users/credo_market/PycharmProjects/seleniumDeepenTest/chromedriver')
-    driver = webdriver.Chrome(service=server, options=options)
+    driver = webdriver.Chrome(options=options)
     driver.maximize_window()
     return driver
 
